@@ -58,10 +58,45 @@ function dibujarEscenario(){
     }
 }
 
+
+// declaramos la funcion del personaje
+// clase jugador en funcion
+let cuadro = function(){
+    // atributo de clase
+    this.x = 0;
+    this.y = 0;
+    this.color = "blue"
+
+    // metodos
+    this.cuadro = function (){
+        ctx.fillStyle = this.color
+        ctx.fillRect (this.x*anchoF, this.y*altoF, anchoF * 2, altoF * 2);
+    }
+
+}
+let linea = function(){
+    // atributo de clase
+    this.x = 4;
+    this.y = 0;
+    this.color = "red"
+
+    // metodos
+    this.linea = function (){
+        ctx.fillStyle = this.color
+        ctx.fillRect (this.x*anchoF, this.y*altoF, anchoF, altoF * 4);
+   }  
+}
+// variable global
+let figura;
+let figura2;
+
 // esta activa todo
 function inicializa(){
     canvas = document.getElementById("canva")
     ctx = canvas.getContext("2d")
+
+    figura2 = new cuadro();
+    figura = new linea();
 
 
     setInterval(function(){
@@ -75,5 +110,6 @@ function inicializa(){
 
 function principal(){
     dibujarEscenario()
-   
+    figura2.cuadro()
+    figura.linea()
 }
