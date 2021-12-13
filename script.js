@@ -8,9 +8,9 @@ const grid = createMatriz(10,20);
 const player = {
     pos: {x: 0, y: 0},
     matriz: [
-        [0,0,0],
-        [1,1,1],
-        [0,1,0]
+        [0,1,1,0],
+        [1,1,1,1],
+        [0,0,0,0]
     ]
 }
 
@@ -47,9 +47,8 @@ function drawMatriz(matriz, offset){
 function draw(){
     context.fillStyle = "black"
     context.fillRect(0,0, canvas.width, canvas.height);
-    drawMatriz(grid, {x:0 , y:0});  
+    drawMatriz(grid, {x:0 , y:0});   //Dibujamos la matriz mediante un grid, de esta manera nos ahorramos las 30 lineas de codigo de la matriz con tan solo unas cuantas lienas de codigo.
     drawMatriz(player.matriz, player.pos);
-
 }
 
 function update(time = 0) {
@@ -69,6 +68,8 @@ function playerDrop(){
     player.pos.y++; //Esto ahce que la pieza caiga, que haya un lapso de tiempo de caida.
     dropCounter=0
 }
+//Creamos eventos de movimientos de posiciones, segun el player.pos hacemos que la ficha se mueva en X o Y.
+
 
 document.addEventListener("keydown", event => {
     if(event.keyCode===40) {
