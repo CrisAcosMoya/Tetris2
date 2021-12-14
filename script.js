@@ -8,9 +8,9 @@ const grid = createMatriz(10,20);
 const player = {
     pos: {x: 0, y: 0},
     matriz: [
-        [0,1,1,0],
-        [1,1,1,1],
-        [0,0,0,0]
+        [0,0,0],
+        [0,1,0],
+        [1,1,1]
     ]
 }
 
