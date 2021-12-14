@@ -10,8 +10,8 @@ const figures = () => {
         //Tando de manera vertical, como horizontal.
         figure.style.top = innerHeight * Math.random() + 'px'
         figure.style.left = innerWidth * Math.random() + 'px'
-        figure.style.background = colors[select]
-
+        figure.style.background = colors[select >= colors.length ? select - 1: select]
+ 
         container.appendChild(figure)
     }
 }
