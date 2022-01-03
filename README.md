@@ -20,7 +20,7 @@ _El despliegue esta actualmente activo y listo para funcionar._
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_Estas fueron las herramientas utilizadas para el proyecto:_
 
 * HTML
 * CSS
